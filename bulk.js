@@ -98,7 +98,7 @@ window.BULK = {
         jQuery(document).on('ajaxComplete', me._onAjax);
 
         if (!me._loopIntervalId) {
-            me._loopIntervalId = setInterval(me._loop, 50);
+            me._loopIntervalId = setInterval(me._loop, 200);
         }
 
         me._mutationObserver.disconnect();
