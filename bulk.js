@@ -180,7 +180,7 @@ window.BULK = {
                 me._controlStop();
             } else {
                 me._loopLastRefreshing = Date.now();
-                $rows.find('button.refresh:not(.refreshing)').first().trigger('click');
+                $rows.find('button.refresh:not(.refreshing)').first().get(0)?.click();
             }
         }
 
@@ -189,7 +189,7 @@ window.BULK = {
 
             if ($candidateTrading.length) {
                 me._controlStart($candidateTrading.closest('[data-id]').data('id'));
-                $candidateTrading.trigger('click');
+                $candidateTrading.get(0)?.click();
             }
         }
 
@@ -198,7 +198,7 @@ window.BULK = {
 
             if ($candidateCleaning.length) {
                 me._loopLastCleaned = Date.now();
-                $candidateCleaning.trigger('click');
+                $candidateCleaning.get(0)?.click();
             }
         }
     },
@@ -349,7 +349,7 @@ window.BULK = {
 
             if (null === me._item) {
                 me._controlStart(id);
-                $node.find('.direct-btn:not(.disabled)').trigger('click');
+                $node.find('.direct-btn:not(.disabled)').get(0)?.click();
                 return;
             }
 
@@ -380,7 +380,7 @@ window.BULK = {
             if ($row.is('.gone')) {
                 me._itemRemove(id);
             } else if (id === me._item) {
-                $target.trigger('click');
+                $target.get(0)?.click();
             }
         }
     }
